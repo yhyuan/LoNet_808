@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -5576,31 +5576,23 @@ Source: http://www.national.com/ds/LM/LM2596.pdf</description>
 </library>
 <library name="Seeed-OPL-Capacitor">
 <packages>
-<package name="AVX-D">
-<wire x1="-4.6355" y1="2.159" x2="4.6355" y2="2.159" width="0.127" layer="21"/>
-<wire x1="4.6355" y1="2.159" x2="4.6355" y2="-2.159" width="0.127" layer="21"/>
-<wire x1="4.6355" y1="-2.159" x2="-4.6355" y2="-2.159" width="0.127" layer="21"/>
-<wire x1="-4.6355" y1="-2.159" x2="-4.6355" y2="2.159" width="0.127" layer="21"/>
-<wire x1="-1.7145" y1="0" x2="-0.9525" y2="0" width="0.127" layer="21"/>
-<wire x1="-1.3335" y1="-0.381" x2="-1.3335" y2="0.381" width="0.127" layer="21"/>
-<smd name="+" x="-3.175" y="0" dx="2.54" dy="3.048" layer="1"/>
-<smd name="-" x="3.175" y="0" dx="2.54" dy="3.175" layer="1" rot="R180"/>
-<text x="-3.81" y="2.54" size="0.889" layer="25" ratio="11">&gt;NAME</text>
-<text x="-3.81" y="-3.302" size="0.635" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="-4.6355" y1="-2.159" x2="4.6355" y2="2.159" layer="39"/>
-</package>
-<package name="AVX-E">
-<wire x1="-4.6355" y1="2.159" x2="4.6355" y2="2.159" width="0.127" layer="21"/>
-<wire x1="4.6355" y1="2.159" x2="4.6355" y2="-2.159" width="0.127" layer="21"/>
-<wire x1="4.6355" y1="-2.159" x2="-4.6355" y2="-2.159" width="0.127" layer="21"/>
-<wire x1="-4.6355" y1="-2.159" x2="-4.6355" y2="2.159" width="0.127" layer="21"/>
-<wire x1="-1.7145" y1="0" x2="-0.9525" y2="0" width="0.127" layer="21"/>
-<wire x1="-1.3335" y1="-0.381" x2="-1.3335" y2="0.381" width="0.127" layer="21"/>
-<smd name="+" x="-3.175" y="0" dx="2.54" dy="3.048" layer="1"/>
-<smd name="-" x="3.175" y="0" dx="2.54" dy="3.048" layer="1" rot="R180"/>
-<text x="-3.175" y="2.54" size="0.889" layer="25" ratio="11">&gt;NAME</text>
-<text x="-3.175" y="-3.175" size="0.635" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="-4.6355" y1="-2.159" x2="4.6355" y2="2.159" layer="39"/>
+<package name="ELECTRO-SMD-C-6MM">
+<description>&lt;b&gt;Aluminium Electrolytic Capacitor Package B&lt;/b&gt;</description>
+<wire x1="-3.175" y1="3.175" x2="2.413" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="2.413" y1="3.175" x2="3.175" y2="2.413" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-2.413" x2="2.413" y2="-3.175" width="0.2032" layer="21"/>
+<wire x1="2.413" y1="-3.175" x2="-3.175" y2="-3.175" width="0.2032" layer="21"/>
+<wire x1="-2.7432" y1="1.1176" x2="2.7432" y2="1.1176" width="0.2032" layer="21" curve="-135.667308"/>
+<wire x1="2.7432" y1="-1.1176" x2="-2.7432" y2="-1.1176" width="0.2032" layer="21" curve="-135.667308"/>
+<wire x1="-3.175" y1="3.175" x2="-3.175" y2="1.143" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="-3.175" x2="-3.175" y2="-1.143" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-2.413" x2="3.175" y2="-1.143" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="2.413" x2="3.175" y2="1.143" width="0.2032" layer="21"/>
+<smd name="-" x="-2.667" y="0" dx="3.048" dy="1.651" layer="1"/>
+<smd name="+" x="2.667" y="0" dx="3.048" dy="1.651" layer="1"/>
+<text x="-1.905" y="3.556" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-2.54" y="-4.318" size="0.635" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-3.175" y1="-3.175" x2="3.175" y2="3.175" layer="39"/>
 </package>
 </packages>
 <symbols>
@@ -5617,40 +5609,41 @@ Source: http://www.national.com/ds/LM/LM2596.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TANTALUM-SMD-470UF-6.3V(AVX-D)" prefix="C" uservalue="yes">
-<description>302020027</description>
+<deviceset name="ALUMINUM-SMD-100UF-50V-20%(D6MM)" prefix="CT" uservalue="yes">
+<description>302030090</description>
 <gates>
 <gate name="G$1" symbol="CAP-POLAR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="AVX-D">
+<device name="" package="ELECTRO-SMD-C-6MM">
 <connects>
 <connect gate="G$1" pin="+" pad="+"/>
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="VALUE" value="470uf"/>
+<attribute name="MPN" value="CS1H101M-CRE77"/>
+<attribute name="VALUE" value="100UF" constant="no"/>
 </technology>
 </technologies>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TANTALUM-SMD-220UF-16V(AVX-E)" prefix="C" uservalue="yes">
-<description>302020032</description>
+<deviceset name="ALUMINUM-SMD-220UF-16V(D6.3-H7.7MM)" prefix="CT" uservalue="yes">
+<description>302030053</description>
 <gates>
 <gate name="G$1" symbol="CAP-POLAR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="AVX-E">
+<device name="" package="ELECTRO-SMD-C-6MM">
 <connects>
 <connect gate="G$1" pin="+" pad="+"/>
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="MPN" value="TAJE227K016RNJ" constant="no"/>
-<attribute name="VALUE" value="220uf"/>
+<attribute name="MPN" value="CS1E221M-CRE77"/>
+<attribute name="VALUE" value="220UF"/>
 </technology>
 </technologies>
 </device>
@@ -5713,8 +5706,8 @@ Source: http://www.national.com/ds/LM/LM2596.pdf</description>
 <part name="IC1" library="national-semiconductor" deviceset="LM2596" device="S"/>
 <part name="D6" library="Seeed-OPL-Diode" deviceset="SMD-DIODE-SCHOTTKY-28V-5A(DO-214AA)" device="" value="28V-5A"/>
 <part name="L2" library="Seeed-OPL-Inductor" deviceset="SMD-INDUCTOR-22UH-20%(2P-2.0X1.2MM)" device="" value="22UH"/>
-<part name="C5" library="Seeed-OPL-Capacitor" deviceset="TANTALUM-SMD-470UF-6.3V(AVX-D)" device="" value="470uf"/>
-<part name="C6" library="Seeed-OPL-Capacitor" deviceset="TANTALUM-SMD-220UF-16V(AVX-E)" device="" value="220uf"/>
+<part name="CT1" library="Seeed-OPL-Capacitor" deviceset="ALUMINUM-SMD-100UF-50V-20%(D6MM)" device="" value="100UF"/>
+<part name="CT2" library="Seeed-OPL-Capacitor" deviceset="ALUMINUM-SMD-220UF-16V(D6.3-H7.7MM)" device="" value="220UF"/>
 </parts>
 <sheets>
 <sheet>
@@ -5813,12 +5806,12 @@ Source: http://www.national.com/ds/LM/LM2596.pdf</description>
 <instance part="FRAME1" gate="G$1" x="-207.01" y="-331.47"/>
 <instance part="FRAME1" gate="G$2" x="-35.56" y="-331.47"/>
 <instance part="U2" gate="G$1" x="-121.92" y="-198.12"/>
-<instance part="J5" gate="JACK" x="-193.04" y="-195.58"/>
-<instance part="IC1" gate="G$1" x="-185.42" y="-213.36"/>
-<instance part="D6" gate="G$1" x="-157.48" y="-208.28"/>
-<instance part="L2" gate="L" x="-144.78" y="-215.9"/>
-<instance part="C5" gate="G$1" x="-213.36" y="-213.36"/>
-<instance part="C6" gate="G$1" x="-127" y="-218.44"/>
+<instance part="J5" gate="JACK" x="-210.82" y="-195.58"/>
+<instance part="IC1" gate="G$1" x="-177.8" y="-198.12"/>
+<instance part="D6" gate="G$1" x="-160.02" y="-205.74" rot="R90"/>
+<instance part="L2" gate="L" x="-150.495" y="-195.58"/>
+<instance part="CT1" gate="G$1" x="-195.58" y="-198.12" rot="R270"/>
+<instance part="CT2" gate="G$1" x="-140.335" y="-205.74" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -6396,6 +6389,71 @@ Source: http://www.national.com/ds/LM/LM2596.pdf</description>
 <pinref part="D5" gate="LED" pin="+"/>
 <wire x1="-100.33" y1="-261.62" x2="-95.25" y2="-261.62" width="0.1524" layer="91"/>
 <label x="-107.95" y="-254" size="1.778" layer="95" ratio="12"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="J5" gate="JACK" pin="+"/>
+<pinref part="IC1" gate="G$1" pin="VIN"/>
+<wire x1="-204.47" y1="-193.04" x2="-195.58" y2="-193.04" width="0.1524" layer="91"/>
+<pinref part="CT1" gate="G$1" pin="+"/>
+<wire x1="-195.58" y1="-193.04" x2="-190.5" y2="-193.04" width="0.1524" layer="91"/>
+<wire x1="-195.58" y1="-194.31" x2="-195.58" y2="-193.04" width="0.1524" layer="91"/>
+<junction x="-195.58" y="-193.04"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="!ON!/OFF"/>
+<pinref part="IC1" gate="G$1" pin="GND"/>
+<wire x1="-190.5" y1="-198.12" x2="-190.5" y2="-203.2" width="0.1524" layer="91"/>
+<wire x1="-190.5" y1="-203.2" x2="-190.5" y2="-205.74" width="0.1524" layer="91"/>
+<junction x="-190.5" y="-203.2"/>
+<pinref part="J5" gate="JACK" pin="CDN"/>
+<pinref part="J5" gate="JACK" pin="-"/>
+<wire x1="-204.47" y1="-195.58" x2="-204.47" y2="-198.12" width="0.1524" layer="91"/>
+<wire x1="-204.47" y1="-198.12" x2="-204.47" y2="-205.74" width="0.1524" layer="91"/>
+<junction x="-204.47" y="-198.12"/>
+<pinref part="CT1" gate="G$1" pin="-"/>
+<wire x1="-204.47" y1="-205.74" x2="-195.58" y2="-205.74" width="0.1524" layer="91"/>
+<wire x1="-195.58" y1="-205.74" x2="-195.58" y2="-201.93" width="0.1524" layer="91"/>
+<wire x1="-190.5" y1="-205.74" x2="-195.58" y2="-205.74" width="0.1524" layer="91"/>
+<junction x="-195.58" y="-205.74"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<wire x1="-195.58" y1="-206.375" x2="-195.58" y2="-210.185" width="0.1524" layer="91"/>
+<pinref part="CT2" gate="G$1" pin="-"/>
+<wire x1="-195.58" y1="-210.185" x2="-160.02" y2="-210.185" width="0.1524" layer="91"/>
+<wire x1="-160.02" y1="-210.185" x2="-140.335" y2="-210.185" width="0.1524" layer="91"/>
+<wire x1="-140.335" y1="-210.185" x2="-140.335" y2="-209.55" width="0.1524" layer="91"/>
+<pinref part="D6" gate="G$1" pin="+"/>
+<wire x1="-160.02" y1="-209.55" x2="-160.02" y2="-210.185" width="0.1524" layer="91"/>
+<junction x="-160.02" y="-210.185"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="OUT"/>
+<pinref part="L2" gate="L" pin="1"/>
+<wire x1="-165.1" y1="-195.58" x2="-160.02" y2="-195.58" width="0.1524" layer="91"/>
+<pinref part="D6" gate="G$1" pin="-"/>
+<wire x1="-160.02" y1="-195.58" x2="-155.575" y2="-195.58" width="0.1524" layer="91"/>
+<wire x1="-160.02" y1="-201.93" x2="-160.02" y2="-195.58" width="0.1524" layer="91"/>
+<junction x="-160.02" y="-195.58"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="L2" gate="L" pin="2"/>
+<pinref part="CT2" gate="G$1" pin="+"/>
+<wire x1="-145.415" y1="-195.58" x2="-140.335" y2="-195.58" width="0.1524" layer="91"/>
+<wire x1="-140.335" y1="-195.58" x2="-140.335" y2="-200.66" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="FB"/>
+<wire x1="-140.335" y1="-200.66" x2="-140.335" y2="-201.93" width="0.1524" layer="91"/>
+<wire x1="-165.1" y1="-200.66" x2="-140.335" y2="-200.66" width="0.1524" layer="91"/>
+<junction x="-140.335" y="-200.66"/>
 </segment>
 </net>
 </nets>
