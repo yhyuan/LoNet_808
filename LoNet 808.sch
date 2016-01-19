@@ -5820,6 +5820,23 @@ Standard A4 size frame in Landscape</description>
 <wire x1="3.2" y1="-5" x2="3.2" y2="-2.2" width="0.127" layer="21"/>
 <wire x1="3.2" y1="2.2" x2="3.2" y2="3.175" width="0.127" layer="21"/>
 </package>
+<package name="H4-2.54">
+<wire x1="-1.27" y1="5.08" x2="1.27" y2="5.08" width="0.127" layer="21"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-5.08" x2="-1.27" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-5.08" x2="-1.27" y2="5.08" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="5.08" x2="1.27" y2="5.08" width="0" layer="39"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="-5.08" width="0" layer="39"/>
+<wire x1="1.27" y1="-5.08" x2="-1.27" y2="-5.08" width="0" layer="39"/>
+<wire x1="-1.27" y1="-5.08" x2="-1.27" y2="5.08" width="0" layer="39"/>
+<pad name="1" x="0" y="3.81" drill="0.889" diameter="1.651" shape="square"/>
+<pad name="2" x="0" y="1.27" drill="0.889" diameter="1.651"/>
+<pad name="3" x="0" y="-1.27" drill="0.889" diameter="1.651"/>
+<pad name="4" x="0" y="-3.81" drill="0.889" diameter="1.651"/>
+<text x="-1.905" y="-1.905" size="0.889" layer="25" ratio="11" rot="R90">&gt;name</text>
+<text x="2.54" y="-1.905" size="0.889" layer="27" ratio="11" rot="R90">&gt;value</text>
+<rectangle x1="-1.27" y1="-5.08" x2="1.27" y2="5.08" layer="39"/>
+</package>
 </packages>
 <symbols>
 <symbol name="POWER-JACK-DC">
@@ -5855,6 +5872,18 @@ Standard A4 size frame in Landscape</description>
 <pin name="-" x="6.35" y="-2.54" visible="off" length="short" rot="R180"/>
 <pin name="CDN" x="6.35" y="0" visible="off" length="short" rot="R180"/>
 </symbol>
+<symbol name="HEADER-4P">
+<wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
+<text x="-7.62" y="6.35" size="1.27" layer="95" ratio="10">&gt;name</text>
+<text x="-1.27" y="6.35" size="1.27" layer="96" ratio="10">&gt;value</text>
+<pin name="P$1" x="-7.62" y="3.81" visible="pad" length="middle" function="dotclk"/>
+<pin name="P$2" x="-7.62" y="1.27" visible="pad" length="middle"/>
+<pin name="P$3" x="-7.62" y="-1.27" visible="pad" length="middle"/>
+<pin name="P$4" x="-7.62" y="-3.81" visible="pad" length="middle"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="CONN-POWER-JACK-2.1MM(DC-005)" prefix="J" uservalue="yes">
@@ -5873,6 +5902,28 @@ Standard A4 size frame in Landscape</description>
 <technology name="">
 <attribute name="MPN" value="DC-005" constant="no"/>
 <attribute name="VALUE" value="DC-005"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" prefix="J" uservalue="yes">
+<description>320030017</description>
+<gates>
+<gate name="G$1" symbol="HEADER-4P" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="H4-2.54">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+<connect gate="G$1" pin="P$3" pad="3"/>
+<connect gate="G$1" pin="P$4" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="F185-1104A1BSYA1" constant="no"/>
+<attribute name="VALUE" value="4p-2.54" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -6844,6 +6895,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <part name="U$23" library="SparkFun" deviceset="RESONATOR" device="SMD"/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="M06" device="SIP"/>
 <part name="C7" library="Seeed-OPL-Capacitor" deviceset="CERAMIC-100NF-50V-10%-X7R(0603)" device="" value="100nf"/>
+<part name="J4" library="Seeed-OPL-Connector" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" value="4p-2.54"/>
 </parts>
 <sheets>
 <sheet>
@@ -6962,6 +7014,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <instance part="U$23" gate="G$1" x="66.04" y="-187.96"/>
 <instance part="JP1" gate="G$1" x="96.52" y="-266.7"/>
 <instance part="C7" gate="G$1" x="115.57" y="-259.08"/>
+<instance part="J4" gate="G$1" x="106.68" y="-238.76"/>
 </instances>
 <busses>
 </busses>
@@ -7039,6 +7092,11 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <wire x1="-36.83" y1="-223.52" x2="-36.83" y2="-220.98" width="0.1524" layer="91"/>
 <wire x1="-36.83" y1="-220.98" x2="-20.32" y2="-220.98" width="0.1524" layer="91"/>
 <label x="-30.48" y="-220.98" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="P$3"/>
+<wire x1="99.06" y1="-240.03" x2="90.17" y2="-240.03" width="0.1524" layer="91"/>
+<label x="90.17" y="-240.03" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -7294,6 +7352,11 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <wire x1="101.6" y1="-271.78" x2="104.14" y2="-271.78" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-271.78" x2="104.14" y2="-276.86" width="0.1524" layer="91"/>
 <label x="104.14" y="-276.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="P$1"/>
+<wire x1="99.06" y1="-234.95" x2="90.17" y2="-234.95" width="0.1524" layer="91"/>
+<label x="90.17" y="-234.95" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VBUS" class="0">
@@ -7762,6 +7825,18 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <pinref part="JP1" gate="G$1" pin="6"/>
 <wire x1="101.6" y1="-259.08" x2="111.76" y2="-259.08" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="D2" class="0">
+<segment>
+<pinref part="U3" gate="U" pin="PD2(INT0)"/>
+<wire x1="125.73" y1="-189.23" x2="135.89" y2="-189.23" width="0.1524" layer="91"/>
+<label x="135.89" y="-189.23" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="P$2"/>
+<wire x1="99.06" y1="-237.49" x2="90.17" y2="-237.49" width="0.1524" layer="91"/>
+<label x="90.17" y="-237.49" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
